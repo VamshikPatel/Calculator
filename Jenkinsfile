@@ -37,7 +37,7 @@ pipeline {
             steps {
                 echo 'Starting SonarQube analysis'
                 withSonarQubeEnv('SonarQube-Local') {
-                    bat 'mvn sonar:sonar'
+                    bat 'mvn sonar:sonar -Dsonar.scanner.skipJreProvisioning=true'
                 }
             }
         }
